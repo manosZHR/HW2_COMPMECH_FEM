@@ -223,12 +223,12 @@ u = sk\r1;
                 x=0.; x1=0;
                 for n=1:9
                     x=x+xpt(ngl(n))*phi(n);
-                    x1=x1+xpt(ngl(n))*phic(n);
+                    x1=x1+xpt(ngl(n))*phic(n); %theta(x)/theta(ksi)
                 end
                 for k11=3:3:9
                     r1(ngl(k11))=r1(ngl(k11))+w(k1)*x1*phi(k11)*h*To;
                     for k12=3:3:9
-                        sk(ngl(k11),ngl(k12))=h*sk(ngl(k11),ngl(k12))... 
+                        sk(ngl(k11),ngl(k12))=sk(ngl(k11),ngl(k12))... 
                             - h*w(k1)*x1*phi(k11)*phi(k12);
                     end
                 end
